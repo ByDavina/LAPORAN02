@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAPORAN TEORI</title>
+    <style id="theme-style">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #00509e;
+        }
+        h2, h3 {
+            color: #007acc;
+        }
+        .konten {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #007acc;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background-color: #00509e;
+        }
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>LAPORAN TEORI</h1>
+    <h2>Davina Najwa Ermawan | 202331111</h2>
+
+    <div class="konten">
+        <h3 id="bagian1">1. Mengapa menggunakan HTML, CSS serta JavaScript dalam pemrograman web?</h3>
+        <ul>
+            <li><strong>HTML (HyperText Markup Language)</strong><br>
+                Fungsi utama HTML adalah untuk membuat struktur dasar sebuah halaman web. HTML digunakan untuk mendefinisikan elemen-elemen pada halaman web seperti teks, gambar, tabel, form, dan lainnya. HTML adalah pondasi dari sebuah halaman web dan wajib digunakan dalam pengembangan web.
+            </li>
+            <li><strong>CSS (Cascading Style Sheets)</strong><br>
+                CSS digunakan untuk mengatur tampilan dan tata letak (layout) dari elemen-elemen HTML. Dengan CSS, developer dapat mengatur warna, font, margin, padding, serta tata letak responsif untuk berbagai perangkat. CSS memisahkan presentasi (desain) dari konten, sehingga kode menjadi lebih rapi dan mudah dikelola.
+            </li>
+            <li><strong>JavaScript</strong><br>
+                JavaScript adalah bahasa pemrograman yang digunakan untuk menambahkan interaktivitas pada halaman web. Dengan JavaScript, web dapat menjadi dinamis, misalnya untuk membuat animasi, validasi form, atau pengambilan data dari server secara asinkron (AJAX). JavaScript memungkinkan pengalaman pengguna (user experience) yang lebih menarik dan interaktif.
+            </li>
+        </ul>
+        <button onclick="tampilkanKonten('bagian1')">Sembunyikan Konten</button>
+    </div>
+
+    <div class="konten">
+        <h3 id="bagian2">2. Bagaimana HTML, CSS serta JavaScript dapat diintegrasikan dalam pemrograman web?</h3>
+        <ul>
+            <li><strong>HTML</strong><br>
+                Fungsi utamanya adalah mendefinisikan struktur konten di halaman web, menggunakan elemen seperti &lt;header&gt;, &lt;footer&gt;, &lt;div&gt;, &lt;p&gt;, &lt;img&gt;, dan lainnya untuk menyusun dokumen.Contoh Source Code HTML :
+                <br>
+                <img src="html.png" alt="kode html" width="250">
+            </li>
+            <li><strong>CSS</strong><br>
+                Fungsi utamanya adalah mengatur tata letak, warna, font, margin, padding, dan elemen-elemen visual lainnya. CSS dapat ditulis secara inline, internal, atau eksternal, dan diterapkan melalui selektor atau melalui file eksternal. Contoh Source Code CSS:
+                <br>
+                <img src="css1.png" alt="kode css" width="250">
+                <br>
+                Contoh dengan menggunakan file eksternal:
+                <br>
+                <img src="css2.png" alt="kode css" width="300">
+            </li>
+            <li><strong>JavaScript</strong><br>
+                Fungsi utamanya adalah untuk mengontrol respons elemen di halaman web. Cara kerjanya adalah dengan menggunakan DOM (Document Object Model) untuk memanipulasi elemen HTML dan mendukung fitur dinamis seperti validasi form, animasi, dan lainnya. Contoh Source Code JavaScript:
+                <br>
+                <img src="js.png" alt="java" width="400">
+            </li>
+        </ul>
+        <button onclick="tampilkanKonten('bagian2')">Sembunyikan Konten</button>
+    </div>
+
+    <div>
+        <button onclick="gantiTema()">Ubah Mode Tampilan</button>
+    </div>
+
+    <script>
+        function tampilkanKonten(idBagian) {
+            const bagian = document.getElementById(idBagian);
+            const konten = bagian.nextElementSibling; 
+            const tombol = konten.nextElementSibling; 
+
+            if (confirm(`Apakah Anda ingin menyembunyikan konten bagian ${bagian.textContent}?`)) {
+                if (konten.style.display === "none") {
+                    konten.style.display = "block";
+                    tombol.textContent = "Sembunyikan Konten";
+                } else {
+                    konten.style.display = "none";
+                    tombol.textContent = "Tampilkan Konten";
+                }
+            }
+        }
+
+        function gantiTema() {
+            const gayaTema = document.getElementById("theme-style");
+
+            if (gayaTema.innerHTML.includes("background-color: #f4f4f4")) {
+                gayaTema.innerHTML = `
+                    body {
+                        font-family: Comic Sans MS, cursive, sans-serif;
+                        background-color: lime;
+                        color: yellow;
+                        margin: 50px;
+                        padding: 30px;
+                        border: 10px solid red;
+                        transform: rotate(-1deg);
+                    }
+                    h1 {
+                        font-size: 50px;
+                        color: magenta;
+                        text-align: left;
+                        text-shadow: 2px 2px 5px red;
+                    }
+                    h2, h3 {
+                        font-size: 40px;
+                        color: cyan;
+                        background: repeating-linear-gradient(45deg, blue, pink 10px);
+                        border-radius: 10px;
+                    }
+                    .konten {
+                        display: flex;
+                        flex-direction: row;
+                        margin: 0 auto;
+                        transform: skewX(20deg);
+                        background-color: #ff0077;
+                    }
+                    button {
+                        background-color: #ff0000;
+                        color: #000;
+                        font-size: 20px;
+                        border: 5px dotted black;
+                        margin: 20px auto;
+                        display: block;
+                    }
+                    button:hover {
+                        background-color: #ffa500;
+                        transform: scale(1.2) rotate(10deg);
+                    }
+                `;
+            } else {
+                gayaTema.innerHTML = `
+                    body {
+                        font-family: Arial, sans-serif;
+                        background-color: #f4f4f4;
+                        color: #333;
+                        margin: 20px;
+                        line-height: 1.6;
+                    }
+                    h1 {
+                        text-align: center;
+                        color: #00509e;
+                    }
+                    h2, h3 {
+                        color: #007acc;
+                    }
+                    .konten {
+                        margin-bottom: 20px;
+                    }
+                    button {
+                        background-color: #007acc;
+                        color: white;
+                        border: none;
+                        padding: 10px 15px;
+                        cursor: pointer;
+                        margin-bottom: 10px;
+                    }
+                    button:hover {
+                        background-color: #00509e;
+                    }
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
